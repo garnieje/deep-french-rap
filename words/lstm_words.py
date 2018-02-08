@@ -68,6 +68,7 @@ class LstmWords:
     def generate(self, num_out, prime, sample=True):
         state = self.sess.run(self.cells.zero_state(
             self.batch_size, tf.float32))
+        prime = prime.decode("utf-8")
         gen_seq = prime
         prime = prime.lower().split()
         input_i = np.array([self.vocab.index(word)

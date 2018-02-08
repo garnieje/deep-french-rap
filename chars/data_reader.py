@@ -11,7 +11,7 @@ class DataReader:
 
     def __init__(self, path_lyrics):
 
-        self.lyrics = open(path_lyrics, "r+", encoding="utf-8").read().split("\n")
+        self.lyrics = open(path_lyrics, "rb").read().split("\n")
         self.clean_text()
         self.get_char()
 
@@ -20,6 +20,7 @@ class DataReader:
         new_lyrics = []
 
         for lyric in self.lyrics:
+            lyric = lyric.decode("utf-8")
             lyric = re.sub("\\[[^\\]]+\\]", "", lyric)
             lyric = re.sub("(\s?\*BREAK\*\s?)+", "\n", lyric)
             new_lyrics.append(lyric)

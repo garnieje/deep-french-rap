@@ -1,10 +1,11 @@
+# coding: utf-8
 import tensorflow as tf
 
 from lstm_words import LstmWords
 from data_reader import DataReader
 
 PATH_LYRICS = "/Users/jerome/Documents/garnieje/deep-french-rap/data/lyrics_Iam.csv"
-PATH_SAVE = "/Users/jerome/Documents/garnieje/deep-french-rap/models/words/test_model_word.ckpt"
+PATH_SAVE = "./models/test_model_word.ckpt"
 
 sess = tf.Session()
 batch_size = 200

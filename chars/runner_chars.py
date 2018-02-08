@@ -8,7 +8,7 @@ import time
 import math
 
 PATH_LYRICS = "/Users/jerome/Documents/garnieje/deep-french-rap/data/lyrics_Iam.csv"
-PATH_SAVE = "/Users/jerome/Documents/garnieje/deep-french-rap/chars/models/"
+PATH_SAVE = "./models/"
 
 reader = DataReader(PATH_LYRICS)
 ix_to_char = reader.get_ix_to_char()
@@ -103,8 +103,6 @@ def save(path, epoch):
     save_filename = path + 'model_char_' + str(epoch) + '.pt'
     torch.save(decoder, save_filename)
     print('Saved as %s' % save_filename)
-
-PATH_SAVE = "/Users/jerome/Documents/garnieje/deep-french-rap/models/chars/"
 
 
 for epoch in range(1, n_epochs + 1):
