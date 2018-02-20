@@ -1,11 +1,11 @@
-# coding: utf-8
 import tensorflow as tf
 
 from lstm_words import LstmWords
 from data_reader import DataReader
 
-PATH_LYRICS = "/Users/jerome/Documents/garnieje/deep-french-rap/data/lyrics_Iam.csv"
-PATH_SAVE = "./models/test_model_word.ckpt"
+PATH_LYRICS = "/data/data/lyrics_Iam.csv"
+# create the folder to store the models
+PATH_SAVE = "/data/models/test_model_word.ckpt"
 
 sess = tf.Session()
 batch_size = 200
@@ -39,7 +39,7 @@ with tf.Session() as sess:
         network.train(input_batch, target_batch, PATH_SAVE)
 
         if epoch % 100 == 0:
-            print(network.generate(50, "ce soir à marseille la nuit tombe noire et dure", sample=False))
+            print(network.generate(50, "ce soir à marseille la nuit tombe noire et dure", sample=True))
             print("##############################################################")
 
 

@@ -7,7 +7,8 @@ from torch.autograd import Variable
 import time
 import math
 
-PATH_LYRICS = "/Users/jerome/Documents/garnieje/deep-french-rap/data/lyrics_Iam.csv"
+PATH_LYRICS = "/data/data/lyrics_Iam.csv"
+# create the folder to store the models
 PATH_SAVE = "./models/"
 
 reader = DataReader(PATH_LYRICS)

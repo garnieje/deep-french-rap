@@ -21,7 +21,7 @@ class DataReader:
 
     def __init__(self, path_lyrics):
 
-        self.lyrics = open(path_lyrics, "rb").read().split("\n")
+        self.lyrics = open(path_lyrics, "r+", encoding="utf-8").read().split("\n")
         self.clean_text()
         self.get_vocab()
 
@@ -30,7 +30,6 @@ class DataReader:
         new_lyrics = []
 
         for lyric in self.lyrics:
-            lyric = lyric.decode("utf-8")
             lyric = lyric.lower()
             # remove text indication in between bracket, we might want to
             # create token for them
