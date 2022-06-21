@@ -7,7 +7,7 @@ html5lib==0.9999999
 idna==2.6
 lxml==4.1.1
 Markdown==2.6.11
-numpy==1.14.0
+numpy==1.22.0
 Pillow==5.0.0
 protobuf==3.5.1
 PyYAML==3.12
